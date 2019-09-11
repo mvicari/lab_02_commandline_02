@@ -19,7 +19,7 @@ $ echo hello
 Copy and paste the output below.
 ----------
 
-
+hello
 
 ==========
 2. Type:
@@ -29,7 +29,7 @@ $ echo hello there
 Copy and paste the output below.
 ----------
 
-
+hello there
 
 ==========
 3. Type:
@@ -39,7 +39,7 @@ $ echo good mornin'
 Copy and paste the output below.
 ----------
 
-
+>
 
 ==========
 4. Uh-oh... we're stuck!
@@ -57,7 +57,7 @@ $ echo "good mornin'"
 Copy and paste the output below.
 ----------
 
-
+good mornin'
 
 ==========
 6. There are some other symbols that have special meanings if you don't quote them.  For example, > brings up a different prompt.  Try *.
@@ -67,7 +67,7 @@ $ echo *
 What happens?
 ----------
 
-
+an echo of the contents of the current directory
 
 ==========
 7. Ok... that's a lot of output.  How do we clean up our screen so that it's empty again?
@@ -75,7 +75,7 @@ What happens?
 Write the command that you used below:
 ----------
 
-
+clear
 
 ==========
 We're going to practice downloading files from a web site.  We'll use this practice to download more lab materials!
@@ -87,7 +87,12 @@ $ curl google.com
 
 Copy and paste the output below.
 ----------
-
+<HTML><HEAD><meta http-equiv="content-type" content="text/html;charset=utf-8">
+<TITLE>301 Moved</TITLE></HEAD><BODY>
+<H1>301 Moved</H1>
+The document has moved
+<A HREF="http://www.google.com/">here</A>.
+</BODY></HTML>
 
 
 ==========
@@ -98,7 +103,7 @@ $ curl www.google.com
 Copy and paste the output below, but not the whole thing!  Just copy up to the part that has the title tags (<title>......</title>).
 ----------
 
-
+<title>Google</title>
 
 ==========
 10. That's great, but what if I want to save the file?  What flag/option and option argument would I use to download the page to a file called google.html?  Run it to download the URL www.google.com.
@@ -106,7 +111,7 @@ Copy and paste the output below, but not the whole thing!  Just copy up to the p
 Write the command you used below.  Also copy and paste the output below.
 ----------
 
-
+curl -o google.html www.google.com
 
 ==========
 11. Now let's download the lab file for this homework.  First, figure out what directory you're in.
@@ -114,7 +119,8 @@ Write the command you used below.  Also copy and paste the output below.
 Write the command you used to determine your directory.  Also, copy and paste the output below.
 ----------
 
-
+pwd
+/Users/student
 
 ==========
 12. If you're not in your home directory, change to it (use the shortcut).
@@ -122,7 +128,7 @@ Write the command you used to determine your directory.  Also, copy and paste th
 Write the command that you used to change to your home directory.  If you were already in your home directory, write the command that you *would* have used to change to it!
 ----------
 
-
+cd ~
 
 ==========
 13. So... the lab materials are located at this url:
@@ -137,7 +143,10 @@ Use ls to verify that it downloaded.
 
 Write down the command that you used to download the file below.  Additionally, write the output of the command below.
 ----------
-
+v120-ent-008:~ student$ curl -o mtec1002-lab-02.zip http://foureyes.github.io/mtec1002-spring2014/labs/02/mtec1002-lab-02.zip
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100   162  100   162    0     0   2745      0 --:--:-- --:--:-- --:--:--  2745
 
 
 ==========
@@ -146,7 +155,7 @@ Write down the command that you used to download the file below.  Additionally, 
 Write down the command that you used to uncompress the file.
 ----------
 
-
+unzip mtec1002-lab-02.zip
 
 ==========
 15. Change to the directory that was just created.  List the contents (of the directory that was extracted from the labs .zip file). 
@@ -154,7 +163,7 @@ Write down the command that you used to uncompress the file.
 Copy and paste the output below.
 ----------
 
-
+books	logs	web
 
 ==========
 We're going to mess around with archiving and compressing files.  We'll make a directory with a file in it... archive and compress it.... and uncompress it elsewhere.
@@ -165,7 +174,24 @@ We're going to mess around with archiving and compressing files.  We'll make a d
 Copy and paste the output below.
 ----------
 
-
+1 electronica			Music
+AMALogger20190109.log		Pictures
+AMALogger20190308.log		Pop
+AMALogger20190827.log		Public
+AMALogger20190829.log		QLData
+AMALogger20190903.log		Things
+AMALogger20190904.log		Wilson-MTEC2230-Fall2019
+AMALogger20190910.log		google.html
+Adlm				google.txt
+Adobe				ipe.properties
+Applications			isus
+Desktop				mtec1002
+Documents			mtec1002-lab-02
+Downloads			mtect1002
+Electronica			pymel.log
+Library				stuff
+MPLABXProjects			whatever
+Movies				xgenhello.txt
 
 ==========
 17. Change into the "stuff" directory that you just created.  Run the following command (we haven't learned this exact command yet, but we will in the next lab!) exactly as described below:
@@ -177,7 +203,7 @@ List the files in the directory you're currently in (which should be stuff).
 Copy and paste the output below.
 ----------
 
-
+hello.txt
 
 ==========
 18. Go up one directory back into your home directory.  Run the following commands exactly to create a compressed archive of the stuff folder.
@@ -188,7 +214,25 @@ List the files in the directory you're currently in (which should be home).
 
 Copy and paste the output below.
 ----------
-
+1 electronica			Pictures
+AMALogger20190109.log		Pop
+AMALogger20190308.log		Public
+AMALogger20190827.log		QLData
+AMALogger20190829.log		Things
+AMALogger20190903.log		Wilson-MTEC2230-Fall2019
+AMALogger20190904.log		google.html
+AMALogger20190910.log		google.txt
+Adlm				ipe.properties
+Adobe				isus
+Applications			mtec1002
+Desktop				mtec1002-lab-02
+Documents			mtect1002
+Downloads			pymel.log
+Electronica			stuff
+Library				stuff.tar
+MPLABXProjects			whatever
+Movies				xgen
+Music
 
 
 ==========
@@ -199,14 +243,33 @@ $ tar -cvf stuff.tar stuff
 Copy and paste the output below.
 ----------
 
-
+a stuff
+a stuff/hello.txt
 
 ==========
 20. List the files in the directory you're currently in (which should be home).  
 
 Copy and paste the output below. (It should contain stuff.tar)
 ----------
-
+1 electronica			Pictures
+AMALogger20190109.log		Pop
+AMALogger20190308.log		Public
+AMALogger20190827.log		QLData
+AMALogger20190829.log		Things
+AMALogger20190903.log		Wilson-MTEC2230-Fall2019
+AMALogger20190904.log		google.html
+AMALogger20190910.log		google.txt
+Adlm				ipe.properties
+Adobe				isus
+Applications			mtec1002
+Desktop				mtec1002-lab-02
+Documents			mtect1002
+Downloads			pymel.log
+Electronica			stuff
+Library				stuff.tar
+MPLABXProjects			whatever
+Movies				xgen
+Music
 
 
 ==========
@@ -216,7 +279,25 @@ gzip stuff.tar
 
 List your files again.... you should have a new file with a .gz extension.  Copy and paste the output of your this below.
 ----------
-
+1 electronica			Pictures
+AMALogger20190109.log		Pop
+AMALogger20190308.log		Public
+AMALogger20190827.log		QLData
+AMALogger20190829.log		Things
+AMALogger20190903.log		Wilson-MTEC2230-Fall2019
+AMALogger20190904.log		google.html
+AMALogger20190910.log		google.txt
+Adlm				ipe.properties
+Adobe				isus
+Applications			mtec1002
+Desktop				mtec1002-lab-02
+Documents			mtect1002
+Downloads			pymel.log
+Electronica			stuff
+Library				stuff.tar.gz
+MPLABXProjects			whatever
+Movies				xgen
+Music
 
 
 ==========
@@ -230,7 +311,7 @@ Change your directory to mtec1002-lab-02.
 
 List the files.  Copy and paste the output below (stuff.tar.gz should be there).
 ----------
-
+books		logs		stuff.tar.gz	web
 
 ==========
 23. You should be in the lab directory.  Let's uncompress the file.
@@ -239,7 +320,8 @@ $ tar -xvf stuff.tar.gz
 
 List the files.  Copy and paste the output below (the folder, stuff, should be there).
 ----------
-
+x stuff/
+x stuff/hello.txt
 
 
 ==========
@@ -258,9 +340,10 @@ REMEMBER to use the -o flag and specifiy a filenmae that ends in .tar.gz
 
 Write out the commands that you used to do this.
 ----------
-
+curl -o secret.tar.gz http://foureyes.github.io/mtec1002/labs/02/secret.tar.gz
 
 
 ==========
 26. How many files were in the archive.  What were their names?  Write out your answers below.
 ----------
+Broken :(
